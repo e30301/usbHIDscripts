@@ -3,7 +3,7 @@
 #include "keyboardLayout/Keyboard_de_DE.h"
 
 USBHIDKeyboard Keyboard;
-void typeString(const char* str, unsigned int delayBetweenKeys = 20) {
+void typeString(const char* str, unsigned int delayBetweenKeys = 10) {
   for (size_t i = 0; i < strlen(str); i++) {
     char c = str[i];
     Keyboard.press(c);
